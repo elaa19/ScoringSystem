@@ -5,74 +5,79 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: #1e2d3d;
-  color: #e8edf3;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 #root { min-height: 100%; }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(100, 120, 160, 0.25) transparent;
+  scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
 }
 
-/* ── Glass card — brighter ── */
+/* ── Light Glass Card Design ── */
 .glass {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.02);
+}
+
+.glass-hover {
+  transition: all 0.2s ease-in-out;
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.11);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.08);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(20px);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
 }
 
-/* ── Subtle grid background — brighter ── */
+/* ── Light Grid Pattern Background ── */
 .bg-grid-dark {
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(140, 170, 230, 0.09) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(3, 126, 243, 0.08) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
-/* ── Hero gradient — more vivid ── */
+/* ── Hero Gradient for Light Mode ── */
 .hero-gradient {
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(3, 126, 243, 0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(99, 102, 241, 0.13) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(3, 126, 243, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 15% 75%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
 }
 
 /* ── Animations ── */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-5px); }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(3, 126, 243, 0.18), 0 0 40px rgba(3, 126, 243, 0.06); }
-  50% { box-shadow: 0 0 30px rgba(3, 126, 243, 0.30), 0 0 60px rgba(3, 126, 243, 0.12); }
+  0%, 100% { box-shadow: 0 0 20px rgba(3, 126, 243, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(3, 126, 243, 0.25); }
 }
 
 @keyframes glow-gold {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.25), 0 0 40px rgba(255, 215, 0, 0.08); }
-  50% { box-shadow: 0 0 35px rgba(255, 215, 0, 0.40), 0 0 60px rgba(255, 215, 0, 0.14); }
+  0%, 100% { box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2); }
+  50% { box-shadow: 0 8px 30px rgba(245, 158, 11, 0.35); }
 }
 
 @keyframes glow-silver {
-  0%, 100% { box-shadow: 0 0 20px rgba(192, 192, 192, 0.18), 0 0 40px rgba(192, 192, 192, 0.06); }
-  50% { box-shadow: 0 0 30px rgba(192, 192, 192, 0.30), 0 0 50px rgba(192, 192, 192, 0.10); }
+  0%, 100% { box-shadow: 0 4px 20px rgba(148, 163, 184, 0.2); }
+  50% { box-shadow: 0 8px 30px rgba(148, 163, 184, 0.35); }
 }
 
 @keyframes glow-bronze {
-  0%, 100% { box-shadow: 0 0 18px rgba(205, 127, 50, 0.18), 0 0 35px rgba(205, 127, 50, 0.06); }
-  50% { box-shadow: 0 0 28px rgba(205, 127, 50, 0.25), 0 0 50px rgba(205, 127, 50, 0.10); }
+  0%, 100% { box-shadow: 0 4px 20px rgba(217, 119, 6, 0.2); }
+  50% { box-shadow: 0 8px 30px rgba(217, 119, 6, 0.35); }
 }
 
 @keyframes shimmer {
@@ -82,29 +87,6 @@ body {
 
 @keyframes score-fill {
   from { width: 0%; }
-}
-
-@keyframes confetti-fall {
-  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-}
-
-@keyframes popup-appear {
-  0% { transform: scale(0.6) translateY(30px); opacity: 0; }
-  60% { transform: scale(1.05) translateY(-5px); opacity: 1; }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
-}
-
-@keyframes trophy-bounce {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  25% { transform: scale(1.15) rotate(-8deg); }
-  50% { transform: scale(1.1) rotate(8deg); }
-  75% { transform: scale(1.05) rotate(-4deg); }
-}
-
-@keyframes shine-sweep {
-  0% { left: -100%; }
-  100% { left: 200%; }
 }
 
 .animate-float {
@@ -129,17 +111,18 @@ body {
 }
 
 .table-row {
-  transition: all 0.2s ease;
+  transition: all 0.15s ease-in-out;
 }
 
 .table-row:hover {
-  background: rgba(3, 126, 243, 0.08) !important;
+  background: #f1f5f9 !important;
 }
 
 .podium-card {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
 }
 
 .podium-card:hover {
@@ -153,7 +136,7 @@ body {
   left: -100%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
   animation: shimmer 4s ease-in-out infinite;
 }
 
@@ -176,6 +159,7 @@ body {
   border-radius: 10px;
   font-weight: 800;
   font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .tooltip-trigger { position: relative; }
@@ -190,103 +174,18 @@ body {
   transition: all 0.2s ease;
   z-index: 50;
   white-space: nowrap;
-  background: rgba(20, 30, 45, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px 10px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 5px 12px;
   border-radius: 8px;
   font-size: 0.7rem;
-  color: #e8edf3;
-  backdrop-filter: blur(8px);
-}
-
-/* ── Free TULDS Popup Styles ── */
-.tulds-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.60);
-  backdrop-filter: blur(8px);
-}
-
-.tulds-popup {
-  position: relative;
-  width: 90%;
-  max-width: 480px;
-  padding: 2.5rem 2rem 2rem;
-  border-radius: 1.5rem;
-  background: linear-gradient(145deg, rgba(30, 45, 61, 0.98), rgba(20, 30, 48, 0.98));
-  border: 1px solid rgba(255, 215, 0, 0.25);
-  box-shadow:
-    0 0 60px rgba(255, 215, 0, 0.12),
-    0 0 120px rgba(3, 126, 243, 0.08),
-    0 20px 60px rgba(0, 0, 0, 0.4);
-  animation: popup-appear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  overflow: hidden;
-  text-align: center;
-}
-
-.tulds-popup::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.06), transparent);
-  animation: shine-sweep 3s ease-in-out infinite;
-}
-
-.tulds-trophy {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  font-size: 2.5rem;
-  animation: trophy-bounce 2s ease-in-out infinite;
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
-  margin-bottom: 1.25rem;
-}
-
-.tulds-confetti {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  animation: confetti-fall 3s linear infinite;
-}
-
-.tulds-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.tulds-close:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: white;
+  color: #f8fafc;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
 }
 
 select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23475569' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   padding-right: 28px !important;
